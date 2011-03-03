@@ -214,10 +214,11 @@ class CouplerBehavior extends ModelBehavior {
 			$file = str_replace(array('\\', '/'), DS, $file);
 
 			if (!is_file($file)) {
-				unset($results[$key]);
+				//unset($results[$key]);
 				continue;
+			} else {
+			    $result[$Model->alias]['file'] = $file;
 			}
-			$result[$Model->alias]['file'] = $file;
 		}
 		return $results;
 	}
